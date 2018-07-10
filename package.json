@@ -1,0 +1,24 @@
+{
+  "name": "fitness-friends-api",
+  "version": "1.0.0",
+  "description": "back end of MERN app to find friends to work out with",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarissaWood/fitness-friends-api.git"
+  },
+  "author": "FML",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarissaWood/fitness-friends-api/issues"
+  },
+  "homepage": "https://github.com/MarissaWood/fitness-friends-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.2"
+  }
+}
