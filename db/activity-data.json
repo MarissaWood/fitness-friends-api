@@ -3,21 +3,21 @@
         "name": "jogging",
         "location": "Meridien Hill Park",
         "date": "2018-07-13",
-        "time": "1700",
+        "time": "5:00 pm",
         "description": "I'll be jogging around 5 miles at a 8:00 pace"
     },
     {
         "name": "kayaking",
         "location": "Key Brigde Boathouse",
         "date": "2018-07-20",
-        "time": "0900",
+        "time": "9:00 am",
         "description": "I'll be kayaking for 1-2 hours"
     },
     {
         "name": "Soul Cycle",
         "location": "Mount Vernon Soul Cycle",
         "date": "2018-07-16",
-        "time": "0700",
+        "time": "7:00 am",
         "description": "I'll be taking Gregg's 7:00am class!"
     }
 ]

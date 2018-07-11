@@ -25,6 +25,26 @@ app.get("/api/activity", (req, res) => {
     });
 });
 
+app.post("/api/activity", (req, res) => {
+  Activity.create(req.body)
+    .then(item => {
+      res.json(item);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+app.get("/api/activity/:id", (req, res) => {
+  Activity.findById(req.params.id)
+    .then(item => {
+      res.json(item);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
 app.set("port", process.env.PORT || 3001);
 
 app.listen(app.get("port"), () => {
