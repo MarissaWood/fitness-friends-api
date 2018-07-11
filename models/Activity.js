@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const Activity = new Schema({
   name: String,
   location: String,
-  date: Date,
+  date: String,
+  time: String,
   description: String
 });
 
