@@ -2,20 +2,27 @@ const express = require("express");
 const parser = require("body-parser");
 const app = express();
 
-const userController = require("./controllers/user.js");
-const activityController = require("./controllers/activity.js");
-const profileController = require("./controllers/profile.js");
+const Activity = require("./models/Activity");
+// const User = require("./models/User");
+// const Profile = require("./models/Profile");
 
 app.use(parser.json());
 
 // app.get("/", (req, res) => res.send("Hello World!"));
 
-app.use("/users", userController);
-app.use("/api/activity", activityController);
-app.use("/api/profile", profileController);
-
 app.get("/", (req, res) => {
-  res.redirect("/api/activities");
+  res.redirect("/api/activity");
+});
+
+// Activity Collection:
+app.get("/api/activity", (req, res) => {
+  Activity.find({})
+    .then(items => {
+      res.json(items);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 app.set("port", process.env.PORT || 3001);
