@@ -45,6 +45,28 @@ app.get("/api/activity/:id", (req, res) => {
     });
 });
 
+app.delete("/api/activity/:id", (req, res) => {
+  Activity.findByIdAndRemove(req.params.id)
+    .then(activity => {
+      if (!activity) {
+        return res.status(404).send({
+          message: "Activity not found with id " + req.params.id
+        });
+      }
+      res.send({ message: "Activity deleted successfully!" });
+    })
+    .catch(err => {
+      if (err.kind === "ObjectId" || err.name === "NotFound") {
+        return res.status(404).send({
+          message: "Note not found with id " + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: "Could not delete note with id " + req.params.id
+      });
+    });
+});
+
 app.set("port", process.env.PORT || 3001);
 
 app.listen(app.get("port"), () => {
