@@ -67,13 +67,13 @@ app.delete("/api/activity/:id", (req, res) => {
     });
 });
 
-
 //Profile Collection
 
-// Rendering profile form 
+// Rendering profile form
 app.get("/api/profile", (req, res) => {
   Profile.find({})
     .then(items => {
+      console.log(items);
       res.json(items);
     })
     .catch(err => {
@@ -82,80 +82,79 @@ app.get("/api/profile", (req, res) => {
 });
 
 //Submitting profile form
-app.post("/api/profile", (req, res) =>{
+app.post("/api/profile", (req, res) => {
   Profile.create(req.body)
     .then(item => {
       res.json(item);
     })
-    .catch(err =>) {
-      console.log(err)
-    })
-  });
-
-  //Rendering individual profile
-  app.get("/api/profile/:id", (req, res) => {
-    Profile.findById(req.params.id)
-      .then(item => {
-        res.json(item);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-
-//Finding and Updating profile information
-  Profile.findByIdAndUpdate(req.params.id, {
-    username: req.body.username,
-    image: req.body.image,
-    bio: req.body.bio,
-    preferences: req.body.preferences
-}, {new: true})
-.then(profile => {
-    if(!profile) {
-        return res.status(404).send({
-            message: "Profile not found with id " + req.params.id
-        });
-    }
-    res.send(profile);
-}).catch(err => {
-    if(err.kind === 'ObjectId') {
-        return res.status(404).send({
-            message: "Profile not found with id " + req.params.id
-        });                
-    }
-    return res.status(500).send({
-        message: "Error updating profile with id " + req.params.id
+    .catch(err => {
+      console.log(err);
     });
 });
-};
 
-// Deleting profile 
-  app.delete("/api/profile/:id", (req, res) => {
-    Profile.findByIdAndRemove(req.params.id)
-      .then(profile => {
-        if (!profile) {
-          return res.status(404).send({
-            message: "Profile not found with id " + req.params.id
-          });
-        }
-        res.send({ message: "Profile deleted successfully!" });
-      })
-      .catch(err => {
-        if (err.kind === "ObjectId" || err.name === "NotFound") {
-          return res.status(404).send({
-            message: "Profile not found with id " + req.params.id
-          });
-        }
-        return res.status(500).send({
-          message: "Could not delete profile with id " + req.params.id
+//Rendering individual profile
+app.get("/api/profile/:id", (req, res) => {
+  Profile.findById(req.params.id)
+    .then(item => {
+      res.json(item);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+//Finding and Updating profile information
+// Profile.findByIdAndUpdate(
+//   req.params.id,
+//   {
+//     username: req.body.username,
+//     image: req.body.image,
+//     bio: req.body.bio,
+//     preferences: req.body.preferences
+//   },
+//   { new: true }
+// )
+//   .then(profile => {
+//     if (!profile) {
+//       return res.status(404).send({
+//         message: "Profile not found with id " + req.params.id
+//       });
+//     }
+//     res.send(profile);
+//   })
+//   .catch(err => {
+//     if (err.kind === "ObjectId") {
+//       return res.status(404).send({
+//         message: "Profile not found with id " + req.params.id
+//       });
+//     }
+//     return res.status(500).send({
+//       message: "Error updating profile with id " + req.params.id
+//     });
+//   });
+
+// Deleting profile
+app.delete("/api/profile/:id", (req, res) => {
+  Profile.findByIdAndRemove(req.params.id)
+    .then(profile => {
+      if (!profile) {
+        return res.status(404).send({
+          message: "Profile not found with id " + req.params.id
         });
+      }
+      res.send({ message: "Profile deleted successfully!" });
+    })
+    .catch(err => {
+      if (err.kind === "ObjectId" || err.name === "NotFound") {
+        return res.status(404).send({
+          message: "Profile not found with id " + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: "Could not delete profile with id " + req.params.id
       });
-  });
-
-
-
-
-
+    });
+});
 
 app.set("port", process.env.PORT || 3001);
 
