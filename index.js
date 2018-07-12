@@ -1,12 +1,20 @@
 const express = require("express");
 const parser = require("body-parser");
-const app = express();
+
+const cors = require("cors");
+const passport = require("./config/passport")();
+const userController = require("./controllers/users.js");
 
 const Activity = require("./models/Activity");
-// const User = require("./models/User");
+const User = require("./models/User");
 const Profile = require("./models/Profile");
 
+const app = express();
+
 app.use(parser.json());
+app.use(cors());
+app.use(passport.initialize());
+app.use("/users", userController);
 
 // app.get("/", (req, res) => res.send("Hello World!"));
 
@@ -155,51 +163,6 @@ app.delete("/api/profile/:id", (req, res) => {
       });
     });
 });
-
-
-// User Collection 
-
-app.get("/user/login", (req, res) => {
-  res.render("user/login", 
-  { message: req.flash("signupMessage") });
-};
-
-app.post("/user/login", (req, res) => {
-  const login = passport.authenticate("local-login", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-    failureFlash: true
-  });
-  return login(req, res);
-};
-
-app.get('/user/sign-up', (req, res) => {
-  res.render("user/signup", 
-  { message: req.flash("signupMessage") });
-}
-
-app.post('/user/sign-up', (req, res) => {
-  const signup = passport.authenticate("local-signup", {
-    successRedirect: "/",
-    failureRedirect: "/signup",
-    failureFlash: true
-  });
-
-  return signup(req, res);
-};
-
-app.get('/user/logout', (req, res) => {
-  req.logout();
-  res.redirect("/");
-}
-
-app.get('user/:id')
-
-
-
-
-
-
 
 app.set("port", process.env.PORT || 3001);
 
