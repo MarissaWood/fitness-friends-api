@@ -10,8 +10,9 @@ const User = mongoose.model("User");
 
 // Post request to /users/signup
 router.post("/signup", (req, res) => {
-  if (req.body.email && req.body.password) {
+  if (req.body.email && req.body.password && req.body.username) {
     let newUser = {
+      username: req.body.username,
       email: req.body.email,
       password: req.body.password
     };
