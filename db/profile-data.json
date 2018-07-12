@@ -5,7 +5,7 @@
       "https://friendlystock.com/wp-content/uploads/2018/04/5-woman-lifting-weights-cartoon-clipart.jpg",
     "bio": "I love to do yoga and am working towards beocming a yoga teacher",
     "preferences": ["hiking", "weightlifting"],
-    "activities": ["ObjectId(5b461dbddddc474f3e56beb2)"]
+    "activities": ["ObjectId(5b479e454e27641830d19d61)"]
   },
   {
     "username": "LeahWoof",
@@ -13,7 +13,7 @@
       "https://vectortoons.com/wp-content/uploads/2016/02/people-playing-with-their-dogs-collection-003.jpg",
     "bio": "Let's go to a solidcore class together",
     "preferences": ["running", "solidcore"],
-    "activities": ["ObjectId(5b461dbddddc474f3e56beb3)", "ObjectId(5b461dbddddc474f3e56beb4)"]
+    "activities": ["ObjectId(5b479e454e27641830d19d62)", "ObjectId(5b479e454e27641830d19d63)"]
   },
   {
     "username": "FranciscoJG20",
@@ -21,6 +21,6 @@
       "https://previews.123rf.com/images/antimartina/antimartina1607/antimartina160700012/59940267-illustration-of-a-floating-and-meditating-yogi.jpg",
     "bio": "I love to run, come run with me!",
     "preferences": ["yoga", "weightlifting"],
-    "activities": ["ObjectId(5b461dbddddc474f3e56beb4)"]
+    "activities": ["ObjectId(5b479e454e27641830d19d63)"]
   }
 ]
