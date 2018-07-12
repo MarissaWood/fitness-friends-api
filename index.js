@@ -1,12 +1,20 @@
 const express = require("express");
 const parser = require("body-parser");
-const app = express();
+
+const cors = require("cors");
+const passport = require("./config/passport")();
+const userController = require("./controllers/users.js");
 
 const Activity = require("./models/Activity");
-// const User = require("./models/User");
+const User = require("./models/User");
 const Profile = require("./models/Profile");
 
+const app = express();
+
 app.use(parser.json());
+app.use(cors());
+app.use(passport.initialize());
+app.use("/users", userController);
 
 // app.get("/", (req, res) => res.send("Hello World!"));
 
