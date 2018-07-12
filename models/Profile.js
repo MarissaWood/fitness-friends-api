@@ -16,10 +16,11 @@ const Profile = new Schema({
       "pilates",
       "weightlifting",
       "crossfit",
-      "solidcore"
+      "solidcore",
+      "hiking"
     ]
   },
-  activities: []
+  activities: [String]
 });
 
 module.exports = mongoose.model("Profile", Profile);
