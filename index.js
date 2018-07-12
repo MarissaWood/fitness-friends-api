@@ -111,35 +111,22 @@ app.get("/api/profile/:id", (req, res) => {
     });
 });
 
-//Finding and Updating profile information
-// Profile.findByIdAndUpdate(
-//   req.params.id,
-//   {
-//     username: req.body.username,
-//     image: req.body.image,
-//     bio: req.body.bio,
-//     preferences: req.body.preferences
-//   },
-//   { new: true }
-// )
-//   .then(profile => {
-//     if (!profile) {
-//       return res.status(404).send({
-//         message: "Profile not found with id " + req.params.id
-//       });
-//     }
-//     res.send(profile);
-//   })
-//   .catch(err => {
-//     if (err.kind === "ObjectId") {
-//       return res.status(404).send({
-//         message: "Profile not found with id " + req.params.id
-//       });
-//     }
-//     return res.status(500).send({
-//       message: "Error updating profile with id " + req.params.id
-//     });
-//   });
+//Update profile, by adding new activity object id to the array
+app.put("/api/profile/:id", (req, res) => {
+  Profile.findById(req.params.id, function(err, profile) {
+    if (err) {
+      res.send(err);
+    }
+    profile.activities.push(`ObjectId(${req.body.itemid})`);
+    // save the item
+    profile.save(function(err) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(profile);
+    });
+  });
+});
 
 // Deleting profile
 app.delete("/api/profile/:id", (req, res) => {
