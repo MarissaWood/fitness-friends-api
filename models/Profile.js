@@ -18,7 +18,8 @@ const Profile = new Schema({
       "crossfit",
       "solidcore"
     ]
-  }
+  },
+  activities: []
 });
 
 module.exports = mongoose.model("Profile", Profile);

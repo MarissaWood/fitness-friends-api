@@ -3,21 +3,24 @@
     "username": "MarissaHeart",
     "image":
       "https://friendlystock.com/wp-content/uploads/2018/04/5-woman-lifting-weights-cartoon-clipart.jpg",
-    "bio": "I am Marissa",
-    "preferences": ["hiking", "weightlifting"]
+    "bio": "I love to do yoga and am working towards beocming a yoga teacher",
+    "preferences": ["hiking", "weightlifting"],
+    "activities": ["ObjectId(5b461dbddddc474f3e56beb2)"]
   },
   {
     "username": "LeahWoof",
     "image":
       "https://vectortoons.com/wp-content/uploads/2016/02/people-playing-with-their-dogs-collection-003.jpg",
-    "bio": "I am Leah",
-    "preferences": ["running", "solidcore"]
+    "bio": "Let's go to a solidcore class together",
+    "preferences": ["running", "solidcore"],
+    "activities": ["ObjectId(5b461dbddddc474f3e56beb3)", "ObjectId(5b461dbddddc474f3e56beb4)"]
   },
   {
     "username": "FranciscoJG20",
     "image":
       "https://previews.123rf.com/images/antimartina/antimartina1607/antimartina160700012/59940267-illustration-of-a-floating-and-meditating-yogi.jpg",
-    "bio": "I am Francisco",
-    "preferences": ["yoga", "weightlifting"]
+    "bio": "I love to run, come run with me!",
+    "preferences": ["yoga", "weightlifting"],
+    "activities": ["ObjectId(5b461dbddddc474f3e56beb4)"]
   }
 ]
