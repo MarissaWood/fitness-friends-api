@@ -4,10 +4,6 @@
 
 This is the back end  server of the Fitness Friends App we built for General Assembly's WDI group project.  This was built with Mongo, Express and Node. for details about the front end, please visit [https://github.com/lenelow/fitness-friends](https://github.com/lenelow/fitness-friends).
 
-If you find a bug, crate an issue with very clear insructions on how to recreate the bug.
-
-If you want to contribute to the code, checkout a new branch and create a pull request into the development branch.  
-
 ## Collections
 
 In our database, we have collections for Users, Profiles and Activities. 
@@ -114,6 +110,11 @@ A deployed version of this project can be found at [https://fitness-friends-api.
 ## Contribution guidelines
 
 If you would like to contribute to this project, make sure you check out the front end [repository](https://github.com/lenelow/fitness-friends). 
+
+If you find a bug, create an issue with very clear instructions on how to recreate the bug.
+
+If you want to contribute to the code, checkout a new branch and create a pull request into the development branch.  
+
 
 ## Future Directions & Unsolved Problems
 
