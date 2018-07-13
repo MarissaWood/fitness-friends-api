@@ -2,7 +2,11 @@
 
 ## Description
 
-This is the back end  server of the Fitness Friends App we built for General Assembly's WDI group project.  This was built with Mongo, Express and Node. for details about the front end, please visit (https://github.com/lenelow/fitness-friends)[https://github.com/lenelow/fitness-friends]
+This is the back end  server of the Fitness Friends App we built for General Assembly's WDI group project.  This was built with Mongo, Express and Node. for details about the front end, please visit [https://github.com/lenelow/fitness-friends](https://github.com/lenelow/fitness-friends).
+
+If you find a bug, crate an issue with very clear insructions on how to recreate the bug.
+
+If you want to contribute to the code, checkout a new branch and create a pull request into the development branch.  
 
 ## Collections
 
@@ -104,12 +108,12 @@ $ node index.js
 ```
 5. navigate to https://localhost:3001/
 
-A deployed version of this project can be found at (https://fitness-friends-api.herokuapp.com/)[https://fitness-friends-api.herokuapp.com/]
+A deployed version of this project can be found at [https://fitness-friends-api.herokuapp.com/](https://fitness-friends-api.herokuapp.com/)
 
 
 ## Contribution guidelines
 
-If you would like to contribute to this project, make sure you check out the front end (repository)[https://github.com/lenelow/fitness-friends]. 
+If you would like to contribute to this project, make sure you check out the front end [repository](https://github.com/lenelow/fitness-friends). 
 
 ## Future Directions & Unsolved Problems
 
