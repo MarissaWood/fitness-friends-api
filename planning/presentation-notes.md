@@ -8,9 +8,9 @@ Fitness Friends, built by FML
 
 - Who are your group members? Who had which responsibilities?
 
-Francisco - user authentication, profiles
+Francisco - user authentication, profiles, front-end deployment
 Marissa - activities component, CRUD and back end deployment
-Leah - Styling, components, front-end deployment
+Leah - Styling, components
 
 - Why is it useful? What is your "pitch"?
 
