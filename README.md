@@ -1,5 +1,7 @@
 # Fitness-Friends-API
 
+**This project is not yet finished. We are still working to make it functional, and hope to finish it in the coming weeks**
+
 ## Description
 
 This is the back end  server of the Fitness Friends App we built for General Assembly's WDI group project.  This was built with Mongo, Express and Node. for details about the front end, please visit [https://github.com/lenelow/fitness-friends](https://github.com/lenelow/fitness-friends).
